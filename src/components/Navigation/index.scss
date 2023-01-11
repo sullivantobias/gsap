@@ -1,0 +1,15 @@
+.Navigation {
+  margin-left: 100px;
+  margin-top: 10px;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    li {
+      margin-right: 30px;
+      padding-right: 3px;
+    }
+  }
+}

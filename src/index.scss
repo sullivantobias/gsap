@@ -1,0 +1,47 @@
+@import "./styles/colors.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: $black;
+  cursor: none;
+}
+
+.App {
+  margin-top: 70px;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 0 2px;
+  overflow: hidden;
+  font-size: 14px;
+  transform-origin: left center;
+  color: $linkColors;
+  font-size: 18px;
+  display: flex;
+  overflow: visible;
+  text-transform: uppercase;
+  cursor: none;
+}
+
+img {
+  width: 500px;
+  height: 1000px;
+}
+
+ul {
+  list-style: none;
+}
