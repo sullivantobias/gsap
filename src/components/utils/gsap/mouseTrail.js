@@ -11,12 +11,12 @@ function MouseTrail() {
 
   function onMouseMove(e) {
     gsap.to(bigBallRef.current, 0.4, {
-      x: e.pageX - 15,
-      y: e.pageY - 15,
+      x: e.clientX - 15,
+      y: e.clientY - 15,
     });
     gsap.to(smallBallRef.current, 0.1, {
-      x: e.pageX - 5,
-      y: e.pageY - 7,
+      x: e.clientX - 5,
+      y: e.clientY - 7,
     });
   }
 

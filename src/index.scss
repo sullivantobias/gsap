@@ -18,6 +18,7 @@ body,
 }
 
 .App {
+  width: 100%;
   margin-top: 70px;
 }
 
@@ -38,10 +39,24 @@ a {
 }
 
 img {
-  width: 500px;
-  height: 1000px;
+  width: 100%;
 }
 
 ul {
   list-style: none;
+}
+
+h1 {
+  text-shadow: 1px 1px 3px $black;
+  z-index: 1;
+  font-size: 3em;
+  color: $white;
+}
+
+p {
+  text-shadow: 1px 1px 3px $black;
+  z-index: 1;
+  font-size: 1.5em;
+  color: $white;
+  max-width: 275px;
 }
