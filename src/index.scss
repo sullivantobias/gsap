@@ -19,7 +19,6 @@ body,
 
 .App {
   width: 100%;
-  margin-top: 70px;
 }
 
 a {
@@ -34,7 +33,9 @@ a {
   font-size: 18px;
   display: flex;
   overflow: visible;
+  font-weight: bold;
   text-transform: uppercase;
+  text-shadow: 1px 1px 3px #000;
   cursor: none;
 }
 

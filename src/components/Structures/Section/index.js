@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 
 import "./index.scss";
 
-function Section({ title, desc }) {
+function Section({ title, desc, isAnimationRevert }) {
   const titleRef = useRef(null);
   const descRef = useRef(null);
 
