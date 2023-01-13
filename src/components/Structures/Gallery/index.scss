@@ -11,6 +11,9 @@
 
   .wrapper {
     display: flex;
+    flex-wrap: nowrap;
+    text-transform: uppercase;
+    overflow: visible;
   }
 
   &__text {
@@ -18,16 +21,21 @@
       font-size: 16rem;
       line-height: 1;
       color: $white;
+      white-space: nowrap;
     }
   }
 
   li {
     flex-shrink: 0;
     width: clamp(500px, 60vw, 800px);
-    padding-right: 1rem;
+    margin-right: 1rem;
+    height: 400px;
+    overflow: hidden;
 
     img {
-      height: 500px;
+      object-fit: cover;
+      height: 100%;
+      filter: grayscale(80%);
     }
   }
 }

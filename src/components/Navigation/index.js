@@ -10,7 +10,7 @@ function Navigation({ links }) {
       .to(currentTarget, {
         yPercent: -40,
         duration: 0.4,
-        color: "#ee1c24",
+        color: "#000",
       })
       .to(currentTarget, {
         yPercent: 0,
