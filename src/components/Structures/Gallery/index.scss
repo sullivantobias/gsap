@@ -1,10 +1,6 @@
 @import "../../../styles/colors.scss";
 
 .Gallery {
-  &__wrapper {
-    overflow-x: hidden;
-  }
-
   &__section:not(.last) {
     padding-bottom: 1rem;
   }

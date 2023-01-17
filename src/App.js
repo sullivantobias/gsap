@@ -5,6 +5,7 @@ import Header from "./components/Structures/Header";
 import Section from "./components/Structures/Section";
 import MouseTrail from "./components/utils/gsap/mouseTrail";
 import Gallery from "./components/Structures/Gallery";
+import PinnedGallery from "./components/Structures/PinnedGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +28,7 @@ function App() {
       />
 
       <Gallery />
+      <PinnedGallery />
     </div>
   );
 }

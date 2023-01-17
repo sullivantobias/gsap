@@ -1,0 +1,17 @@
+.PinnedGallery {
+  &__container {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 64px;
+    filter: grayscale(80%);
+  }
+
+  &__text {
+    position: absolute;
+  }
+}

@@ -5,10 +5,10 @@ import imagesLoaded from "imagesloaded";
 
 import "./index.scss";
 
-function Gallery() {
-  const sectionIndex = [1, 2, 3, 4];
-  const imgIndex = [1, 2, 3, 4, 5];
+const SECTIONINDEX = [1, 2, 3, 4];
+const IMGINDEX = [1, 2, 3, 4, 5];
 
+function Gallery() {
   useLayoutEffect(() => {
     const images = gsap.utils.toArray("img");
 
@@ -72,13 +72,13 @@ function Gallery() {
       <div className="Gallery__wrapper">
         {basicSection}
 
-        {sectionIndex.map((id) => {
+        {SECTIONINDEX.map((id) => {
           return (
             <section key={id} className="Gallery__section">
               <ul className="wrapper">
-                {imgIndex.map((imgId) => {
+                {IMGINDEX.map((imgId) => {
                   return (
-                    <li key={imgId}>
+                    <li className="hoverable" key={imgId}>
                       <img
                         onMouseEnter={onMouseEnter}
                         src={`https://picsum.photos/1600/800?random=${imgId}`}
