@@ -4,9 +4,10 @@
   position: relative;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   flex-direction: column;
+  padding: 0 100px;
 
   &__backGround {
     position: absolute;
@@ -18,10 +19,5 @@
     background-position: center;
     background-repeat: no-repeat;
     filter: grayscale(70%);
-  }
-
-  h1,
-  p {
-    opacity: 0;
   }
 }

@@ -41,18 +41,18 @@ function Section({ title, desc, isAnimationRevert }) {
     gsap
       .timeline({
         defaults: {
-          x: 300,
-          opacity: 1,
-          duration: 2,
-          ease: "elastic",
+          x: -300,
+          opacity: 0,
+          duration: 1,
+          ease: "bounce",
         },
         scrollTrigger: {
           trigger: titleRef.current,
           start: "left right",
         },
       })
-      .to(titleRef.current, {})
-      .to(descRef.current, {}, 0.4);
+      .from(titleRef.current, {})
+      .from(descRef.current, {}, 0.4);
   }, []);
 
   return (

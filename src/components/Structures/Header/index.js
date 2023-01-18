@@ -3,9 +3,10 @@ import Navigation from "../../Navigation";
 import "./index.scss";
 
 const LINKS = [
-  { label: "Products", href: "#products" },
-  { label: "About", href: "#about" },
-  { label: "Reborn", href: "#reborn" },
+  { label: "Home", href: "#home" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "History", href: "#history" },
+  { label: "Contact", href: "#contact" },
 ];
 
 function Header() {

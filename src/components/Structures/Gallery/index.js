@@ -1,14 +1,14 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState, useRef, useMemo } from "react";
 import { gsap } from "gsap";
 
 import imagesLoaded from "imagesloaded";
 
 import "./index.scss";
 
-const SECTIONINDEX = [1, 2, 3, 4];
-const IMGINDEX = [1, 2, 3, 4, 5];
-
 function Gallery() {
+  const [currentImageUrl, setCurrentImageUrl] = useState("");
+  const imageOverlayRef = useRef(null);
+
   useLayoutEffect(() => {
     const images = gsap.utils.toArray("img");
 
@@ -58,6 +58,28 @@ function Gallery() {
       });
   };
 
+  const animation = (src, target) => {
+    gsap.fromTo(
+      target.current,
+      {
+        opacity: src ? 0 : 1,
+        scale: src ? 0 : 1,
+      },
+      {
+        opacity: src ? 1 : 0,
+        scale: src ? 1 : 0,
+      }
+    );
+  };
+
+  const onClickHandler = ({ currentTarget }) => {
+    const src = currentTarget?.src;
+
+    src && setCurrentImageUrl(src);
+
+    animation(src, imageOverlayRef);
+  };
+
   const basicSection = (
     <section className="Gallery__text">
       <div className="wrapper text">
@@ -67,32 +89,47 @@ function Gallery() {
     </section>
   );
 
+  const imagesArray = Array.from({ length: 5 }).map(
+    () =>
+      `https://picsum.photos/1600/800?random=${Math.floor(Math.random() * 100)}`
+  );
+
+  const images = useMemo(
+    () =>
+      imagesArray.map((value, index) => (
+        <li className="hoverable" key={index}>
+          <img
+            onClick={onClickHandler}
+            onMouseEnter={onMouseEnter}
+            src={value}
+            alt=""
+          />
+        </li>
+      )),
+    []
+  );
+
   return (
-    <div className="Gallery">
+    <div id="gallery" className="Gallery">
       <div className="Gallery__wrapper">
         {basicSection}
 
-        {SECTIONINDEX.map((id) => {
-          return (
-            <section key={id} className="Gallery__section">
-              <ul className="wrapper">
-                {IMGINDEX.map((imgId) => {
-                  return (
-                    <li className="hoverable" key={imgId}>
-                      <img
-                        onMouseEnter={onMouseEnter}
-                        src={`https://picsum.photos/1600/800?random=${imgId}`}
-                        alt=""
-                      />
-                    </li>
-                  );
-                })}
-              </ul>
+        {Array(3)
+          .fill(null)
+          .map((value, index) => (
+            <section key={index} className="Gallery__section">
+              <ul className="wrapper">{images}</ul>
             </section>
-          );
-        })}
+          ))}
 
         {basicSection}
+      </div>
+      <div
+        ref={imageOverlayRef}
+        onClick={onClickHandler}
+        className="Gallery__overlay"
+      >
+        <img src={currentImageUrl} alt="" />
       </div>
     </div>
   );

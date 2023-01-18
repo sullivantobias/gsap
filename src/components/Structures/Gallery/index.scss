@@ -21,6 +21,18 @@
     }
   }
 
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
   li {
     flex-shrink: 0;
     width: clamp(500px, 60vw, 800px);

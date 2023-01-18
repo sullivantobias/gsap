@@ -1,0 +1,13 @@
+@import "../../styles/colors.scss";
+
+.Arrow {
+  margin-bottom: 50px;
+
+  &__icon {
+    border-color: transparent transparent $white;
+    border-style: solid;
+    border-width: 20px;
+    height: 0px;
+    width: 0px;
+  }
+}
