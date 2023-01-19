@@ -10,7 +10,7 @@ function Navigation({ links }) {
       .to(currentTarget, {
         yPercent: -40,
         duration: 0.4,
-        color: "#000",
+        color: "#fcd535",
       })
       .to(currentTarget, {
         yPercent: 0,
@@ -25,8 +25,8 @@ function Navigation({ links }) {
         {links.map(({ label, href }) => (
           <li className="Navigation__link" key={href}>
             <a href={href}>
-              {label.split("").map((letter) => (
-                <div key={letter} onMouseEnter={onMouseOver}>
+              {label.split("").map((letter, index) => (
+                <div key={letter + index} onMouseEnter={onMouseOver}>
                   {letter}
                 </div>
               ))}

@@ -1,13 +1,18 @@
 @import "../../../styles/colors";
+@import "../../../styles/breakpoints";
 
 .Section {
   position: relative;
   height: 100vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 100px;
+
+  @include medium {
+    padding: 0 100px;
+    align-items: flex-end;
+  }
 
   &__backGround {
     position: absolute;

@@ -64,6 +64,7 @@ function Gallery() {
       {
         opacity: src ? 0 : 1,
         scale: src ? 0 : 1,
+        width: "100%",
       },
       {
         opacity: src ? 1 : 0,
@@ -127,7 +128,7 @@ function Gallery() {
       <div
         ref={imageOverlayRef}
         onClick={onClickHandler}
-        className="Gallery__overlay"
+        className="Gallery__overlay hoverable closable"
       >
         <img src={currentImageUrl} alt="" />
       </div>

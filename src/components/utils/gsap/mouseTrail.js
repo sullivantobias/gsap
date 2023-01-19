@@ -7,7 +7,8 @@ import "./index.scss";
 function MouseTrail() {
   const bigBallRef = useRef(null);
   const smallBallRef = useRef(null);
-  const textRef = useRef(null);
+  const textViewRef = useRef(null);
+  const textCloseRef = useRef(null);
 
   function onMouseMove(e) {
     gsap.to(bigBallRef.current, 0.4, {
@@ -20,14 +21,30 @@ function MouseTrail() {
     });
   }
 
-  function onMouseHover() {
+  function onMouseHover({ currentTarget }) {
+    const isClosable = currentTarget?.classList?.contains("closable");
+
     gsap.to(bigBallRef.current, 0.3, {
       scale: 4,
     });
 
-    gsap.set(textRef.current, {
-      opacity: 1,
-    });
+    if (isClosable) {
+      gsap.set(textViewRef.current, {
+        opacity: 0,
+      });
+
+      gsap.set(textCloseRef.current, {
+        opacity: 1,
+      });
+    } else {
+      gsap.set(textViewRef.current, {
+        opacity: 1,
+      });
+
+      gsap.set(textCloseRef.current, {
+        opacity: 0,
+      });
+    }
   }
 
   function onMouseHoverOut() {
@@ -35,7 +52,7 @@ function MouseTrail() {
       scale: 1,
     });
 
-    gsap.set(textRef.current, {
+    gsap.set(textViewRef.current, {
       opacity: 0,
     });
   }
@@ -54,8 +71,11 @@ function MouseTrail() {
   return (
     <div className="Cursor">
       <div ref={bigBallRef} className="Cursor__ball">
-        <span ref={textRef} className="Cursor__text">
+        <span ref={textViewRef} className="Cursor__text">
           View
+        </span>
+        <span ref={textCloseRef} className="Cursor__text">
+          Close
         </span>
         <svg height="30" width="30">
           <circle cx="15" cy="15" r="12" strokeWidth="0"></circle>

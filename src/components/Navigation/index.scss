@@ -1,14 +1,18 @@
-.Navigation {
-  margin-left: 100px;
+@import "../../styles/breakpoints";
 
+.Navigation {
   ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 
     li {
-      margin-right: 30px;
-      padding-right: 3px;
+      margin-right: 10px;
+
+      @include medium {
+        margin-right: 30px;
+        padding-right: 3px;
+      }
     }
   }
 }

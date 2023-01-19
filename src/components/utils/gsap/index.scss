@@ -1,26 +1,29 @@
-@import "../../../styles/colors.scss";
+@import "../../../styles/colors";
+@import "../../../styles/breakpoints";
 
 .Cursor {
   pointer-events: none;
 
-  &__ball {
-    position: fixed;
-    top: 0;
-    left: 0;
-    mix-blend-mode: difference;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @include medium {
+    &__ball {
+      position: fixed;
+      top: 0;
+      left: 0;
+      mix-blend-mode: difference;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    circle {
-      fill: $white;
+      circle {
+        fill: $white;
+      }
     }
-  }
 
-  &__text {
-    position: absolute;
-    font-size: 8px;
-    opacity: 0;
+    &__text {
+      position: absolute;
+      font-size: 8px;
+      opacity: 0;
+    }
   }
 }
