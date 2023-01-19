@@ -1,3 +1,4 @@
+@import "../../styles/colors";
 @import "../../styles/breakpoints";
 
 .Navigation {
@@ -8,6 +9,16 @@
 
     li {
       margin-right: 10px;
+
+      a {
+        transition: all 1s;
+      }
+
+      &.is-active {
+        a {
+          color: $titleColor;
+        }
+      }
 
       @include medium {
         margin-right: 30px;
